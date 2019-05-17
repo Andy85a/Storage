@@ -163,6 +163,20 @@ namespace Storage.Controllers
 
             return View("Index", cat);
         }
+        public IActionResult Drop()
+        {
+            var prods = new ProductViewModel();
+
+            prods.Storage = _context.Product.Select(p => new SelectListItem()
+            {
+                Value = p.Id.ToString(),
+                Text = p.Name
+            })
+            .ToList();          
+            return View(prods);
+
+            
+        }
   
 
 

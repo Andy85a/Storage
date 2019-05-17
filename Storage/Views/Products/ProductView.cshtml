@@ -9,6 +9,21 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<form method="post">
+    <button asp-controller="Products" asp-action="Fil">Sök på kategori</button>
+    <input type="text" name="category" />
+    <button asp-controller="Products" asp-action="Drop">Kolla</button>
+    <select asp-for="Id" asp-items="@Model.First().Storage">
+        <option value="Name">Name</option>
+        <option value="Price">Price</option>
+        <option value="OrderDate">OrderDate</option>
+        <option value="Category">Category</option>
+        <option value="Shelf">Shelf</option>
+        <option value="Count">Count</option>
+        <option value="Description">Description</option>
+
+    </select>
+</form>
 <table class="table">
     <thead>
         <tr>
